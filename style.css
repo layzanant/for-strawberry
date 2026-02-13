@@ -1,0 +1,171 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #fce4ec; /* Soft pink background */
+    font-family: 'Lora', serif;
+    overflow-x: hidden;
+    touch-action: manipulation;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+/* Question Styling */
+.main-title {
+    color: #c2185b;
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem;
+    margin-bottom: 30px;
+}
+
+#yes-btn {
+    position: relative;
+    z-index: 1001; /* Higher than the No button */
+    background-color: #e91e63;
+    color: white;
+    padding: 15px 40px;
+    border-radius: 30px;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-family: 'Lora', serif;
+}
+
+#no-btn { background: #9e9e9e; color: white; padding: 10px 25px; border-radius: 30px; border: none; cursor: pointer; }
+
+/* The Letter Block */
+.letter-block {
+    background: #fffdf9; /* Paper-like white */
+    padding: 40px;
+    border-radius: 2px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15), inset 0 0 100px rgba(255,248,220,0.5);
+    border: 1px solid #f3e5f5;
+    position: relative;
+    animation: openLetter 1.5s ease-out;
+    text-align: left;
+}
+
+/* Red border line on the left like a notebook/letter */
+.letter-block::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: rgba(211, 47, 47, 0.2);
+}
+
+.greeting {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    color: #c2185b;
+    margin-bottom: 25px;
+}
+
+.letter-body p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.letter-footer {
+    margin-top: 40px;
+    text-align: right;
+}
+
+.closing {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    color: #c2185b;
+    margin-bottom: 5px;
+}
+
+.sig-names { font-weight: bold; margin: 0; }
+.date { font-size: 0.9rem; color: #777; margin: 0; }
+
+.hidden { display: none !important; }
+
+@keyframes openLetter {
+    from { opacity: 0; transform: scale(0.9) translateY(30px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+#no-btn {
+    background-color: #9e9e9e;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 999;
+    /* Added for mobile stability */
+    touch-action: none; 
+    position: relative; /* Initial state */
+}
+
+.collage-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for desktop */
+    grid-template-rows: repeat(2, 1fr);    /* 2 rows for desktop */
+    z-index: -1;
+}
+
+/* Individual Photo Styling */
+.photo {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle grid lines */
+}
+
+/* Updated paths to point to your 'images' folder */
+/* Change the filenames (1.jpg, etc.) to match your actual files */
+.photo1 { background-image: url('images/photo1.jpeg'); }
+.photo4 { background-image: url('images/photo2.jpeg'); }
+.photo3 { background-image: url('images/photo3.jpeg'); }
+.photo2 { background-image: url('images/photo4.jpeg'); }
+.photo5 { background-image: url('images/photo5.jpeg'); }
+.photo6 { background-image: url('images/photo6.jpeg'); }
+
+/* The Overlay with a slight blur for readability */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(252, 228, 236, 0.4); /* Pink tint */
+    backdrop-filter: blur(2px); /* Makes the text pop */
+    z-index: 1;
+}
+
+/* Responsive Fix for Mobile */
+@media (max-width: 600px) {
+    .collage-background {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for mobile */
+        grid-template-rows: repeat(3, 1fr);    /* 3 rows for mobile */
+    }
+}
+
+/* Ensure the main container is visible over the background */
+.container {
+    position: relative;
+    z-index: 10;
+}
