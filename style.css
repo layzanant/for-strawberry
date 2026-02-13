@@ -137,12 +137,12 @@ body {
 
 /* Updated paths to point to your 'images' folder */
 /* Change the filenames (1.jpg, etc.) to match your actual files */
-.photo1 { background-image: url('images/photo1.jpeg'); }
-.photo4 { background-image: url('images/photo2.jpeg'); }
-.photo3 { background-image: url('images/photo3.jpeg'); }
-.photo2 { background-image: url('images/photo4.jpeg'); }
-.photo5 { background-image: url('images/photo5.jpeg'); }
-.photo6 { background-image: url('images/photo6.jpeg'); }
+.photo1 { background-image: url('photo1.jpeg'); }
+.photo4 { background-image: url('photo2.jpeg'); }
+.photo3 { background-image: url('photo3.jpeg'); }
+.photo2 { background-image: url('photo4.jpeg'); }
+.photo5 { background-image: url('photo5.jpeg'); }
+.photo6 { background-image: url('photo6.jpeg'); }
 
 /* The Overlay with a slight blur for readability */
 .overlay {
